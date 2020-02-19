@@ -1,0 +1,19 @@
+{
+  "info": {
+    "name": "Ingredient",
+    "icon": "pepper-hot"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "Quantity": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "connection": "default",
+  "collectionName": "components_food_ingredients"
+}

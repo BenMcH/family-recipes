@@ -1,0 +1,33 @@
+{
+  "info": {
+    "name": "Recipe"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "Ingredient": {
+      "type": "component",
+      "repeatable": true,
+      "component": "food.ingredient"
+    },
+    "Instructions": {
+      "type": "text"
+    },
+    "mealMedia": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    }
+  },
+  "connection": "default",
+  "collectionName": "recipes"
+}
