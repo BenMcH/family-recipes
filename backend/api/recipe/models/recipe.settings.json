@@ -1,4 +1,6 @@
 {
+  "connection": "default",
+  "collectionName": "recipes",
   "info": {
     "name": "Recipe"
   },
@@ -13,7 +15,7 @@
     "description": {
       "type": "text"
     },
-    "ingredient": {
+    "ingredients": {
       "type": "component",
       "repeatable": true,
       "component": "food.ingredient"
@@ -27,7 +29,5 @@
       "plugin": "upload",
       "required": false
     }
-  },
-  "connection": "default",
-  "collectionName": "recipes"
+  }
 }
