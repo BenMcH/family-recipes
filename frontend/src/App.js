@@ -19,7 +19,7 @@ const App = () => {
       <h2>Recipes ({recipes.length})</h2>
 
       <ul>
-        {recipes.map((recipe) => <li>{recipe.Name}</li>)}
+        {recipes.map((recipe) => <li>{recipe.name} - {recipe.description}</li>)}
       </ul>
 
     </div>

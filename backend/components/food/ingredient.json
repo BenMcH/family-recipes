@@ -5,11 +5,11 @@
   },
   "options": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string",
       "required": true
     },
-    "Quantity": {
+    "quantity": {
       "type": "string",
       "required": true
     }

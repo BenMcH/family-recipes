@@ -7,18 +7,18 @@
     "timestamps": true
   },
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string"
     },
-    "Description": {
+    "description": {
       "type": "text"
     },
-    "Ingredient": {
+    "ingredient": {
       "type": "component",
       "repeatable": true,
       "component": "food.ingredient"
     },
-    "Instructions": {
+    "instructions": {
       "type": "text"
     },
     "mealMedia": {
