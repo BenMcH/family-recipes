@@ -5,7 +5,9 @@ const useRecipes = () => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:1337/recipes').then(response => response.json()).then(json => setRecipes(json));
+    fetch('http://localhost:1337/recipes').then(response => response.json()).then(json => {
+      setRecipes(json);
+    });
   }, []);
 
   return recipes;
@@ -22,7 +24,7 @@ const Recipe = ({recipe}) => (
   </ul>
   <h3>Instructions</h3>
   <ol>
-    {recipe.instructions.split('\n').map((instruction) => <li>{instruction}</li>)}
+    {recipe.instructions.map((instruction) => <li>{instruction.text}</li>)}
   </ol>
 </div>
 )

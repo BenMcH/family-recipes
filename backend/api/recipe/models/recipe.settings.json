@@ -20,7 +20,7 @@
       "repeatable": true,
       "component": "food.ingredient"
     },
-    "instructions": {
+    "instruction": {
       "type": "text"
     },
     "mealMedia": {
@@ -28,6 +28,11 @@
       "via": "related",
       "plugin": "upload",
       "required": false
+    },
+    "instructions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.instructions"
     }
   }
 }
