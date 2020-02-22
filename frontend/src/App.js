@@ -16,25 +16,32 @@ const useRecipes = () => {
 
 const Recipe = ({recipe}) => {
   const [open, setOpen] = useState(false);
-
   const toggle = () => setOpen(!open);
 
   return (
     <Card variant="outlined">
       <CardContent>
         <h2>{recipe.name}</h2>
-        {recipe.mealMedia.length && <img src={`http://localhost:1337/${recipe.mealMedia[0].url}`} alt={'Recipe cover image'} />}
+        {recipe.mealMedia.length
+          && <img src={`http://localhost:1337/${recipe.mealMedia[0].url}`} alt={'Recipe cover image'} />}
         <p>{recipe.description}</p>
-        <CardActions disableSpacing style={{display: 'flex', flexDirection: 'row', justifyContent: 'end'}}>
+        <CardActions
+          disableSpacing
+          style={{display: 'flex', flexDirection: 'row', justifyContent: 'end'}}
+        >
           <Button
+            color={'primary'}
+            variant={'contained'}
             onClick={toggle}
-            aria-expanded={open}
-            aria-label="show details"
           >
             View Recipe
           </Button>
         </CardActions>
-        <Backdrop open={open} onClick={toggle} style={{zIndex: 999}}>
+        <Backdrop
+          open={open}
+          onClick={toggle}
+          style={{zIndex: 999}}
+        >
           <div style={{background: 'white', padding: '2rem'}}>
             <h2>{recipe.name}</h2>
             {recipe.mealMedia.length && <img src={`http://localhost:1337/${recipe.mealMedia[0].url}`} alt={'Recipe cover image'} />}
