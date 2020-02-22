@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Card, CardContent, Collapse, CardActions, IconButton} from '@material-ui/core';
+import {Card, CardContent, CardActions, Button, Backdrop} from '@material-ui/core';
 import './App.css';
 
 const useRecipes = () => {
@@ -26,24 +26,29 @@ const Recipe = ({recipe}) => {
         {recipe.mealMedia.length && <img src={`http://localhost:1337/${recipe.mealMedia[0].url}`} alt={'Recipe cover image'} />}
         <p>{recipe.description}</p>
         <CardActions disableSpacing style={{display: 'flex', flexDirection: 'row', justifyContent: 'end'}}>
-          <IconButton
+          <Button
             onClick={toggle}
             aria-expanded={open}
             aria-label="show details"
           >
-            {open ? '-' : '+'}
-          </IconButton>
+            View Recipe
+          </Button>
         </CardActions>
-        <Collapse in={open}>
-          <h3>Ingredients</h3>
-          <ul>
-            {recipe.ingredients.map((ingredent) => <li>{ingredent.name} - {ingredent.quantity}</li>)}
-          </ul>
-          <h3>Instructions</h3>
-          <ol>
-            {recipe.instructions.map((instruction) => <li>{instruction.text}</li>)}
-          </ol>
-        </Collapse>
+        <Backdrop open={open} onClick={toggle} style={{zIndex: 999}}>
+          <div style={{background: 'white', padding: '2rem'}}>
+            <h2>{recipe.name}</h2>
+            {recipe.mealMedia.length && <img src={`http://localhost:1337/${recipe.mealMedia[0].url}`} alt={'Recipe cover image'} />}
+            <p>{recipe.description}</p>
+            <h3>Ingredients</h3>
+            <ul>
+              {recipe.ingredients.map((ingredent) => <li>{ingredent.name} - {ingredent.quantity}</li>)}
+            </ul>
+            <h3>Instructions</h3>
+            <ol>
+              {recipe.instructions.map((instruction) => <li>{instruction.text}</li>)}
+            </ol>
+          </div>
+        </Backdrop>
       </CardContent>
     </Card>
   );
