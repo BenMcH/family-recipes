@@ -1,0 +1,24 @@
+#container {
+  display: grid;
+  grid-template: auto / repeat(auto-fit, minmax(24rem, max-content));
+  gap: 1rem;
+  justify-content: center;
+}
+
+.card-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.backdrop {
+  z-index: 2 !important;
+}
+
+.backdrop__body {
+  z-index: 999;
+
+  background: white;
+  padding: 2rem;
+  overflow-y: scroll;
+}
