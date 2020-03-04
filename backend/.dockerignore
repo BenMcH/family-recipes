@@ -1,0 +1,10 @@
+*
+!api
+!components
+!extensions
+!public
+!index.js
+!package.json
+!yarn.lock
+!favicon.ico
+!config
